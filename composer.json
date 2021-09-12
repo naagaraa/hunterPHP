@@ -1,0 +1,33 @@
+{
+    "name": "nagara/hunter-php",
+    "description": "this libraries tools for web data extration tools",
+    "type": "library",
+    "require-dev": {
+        "symfony/var-dumper": "5.4.x-dev"
+    },
+    "license": "MIT",
+    "config": {
+        "optimize-autoloader": true,
+        "apcu-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "src\\": "src"
+        },
+        "classmap": [
+            "src"
+        ]
+    },
+    "authors": [
+        {
+            "name": "naagaraa",
+            "email": "ekabersinar@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "fabpot/goutte": "dev-master"
+    }
+}
