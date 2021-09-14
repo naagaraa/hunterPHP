@@ -45,10 +45,10 @@ class Hunter
 
                 break;
 
-            case 'science_redirect':
+            case 'springeropen':
                 $extract = [
-                    "hunterkey" => str_replace(" ", "%20", trim($key)),
-                    "htmldom" => ".search-result-wrapper div > .result-item-content h2 a",
+                    "hunterkey" => str_replace(" ", "+", trim($key)),
+                    "htmldom" => "h3",
                 ];
                 return $extract;
 
@@ -82,13 +82,15 @@ class Hunter
 
 
         $client = new Client(HttpClient::create([
-            'timeout' => 60,
-            'verify_peer' => false, 'verify_host' => false
+            'timeout' => 120,
+            'verify_peer' => false,
+            'verify_host' => false
         ]));
         $crawler = $client->request('GET', $http_client);
 
         $extract_data = [];
         $crawler->filter($filter_data["htmldom"])->each(function ($node) use (&$extract_data) {
+            // echo $node->text() . "<br>";
             array_push($extract_data, $node->text());
         });
 

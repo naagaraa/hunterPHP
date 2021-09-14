@@ -10,7 +10,7 @@ class ListWebScrap
         "google_scholar" => "https://scholar.google.com/scholar?hl=id&as_sdt=0%2C5&q=hunterkey",
         "neliti" => "https://www.neliti.com/id/search?q=hunterkey",
         "research_gate" => "https://www.researchgate.net/search/publication?q=hunterkey",
-        "science_redirect" => "https://www.sciencedirect.com/search?qs=hunterkey"
+        "springeropen" => "https://www.springeropen.com/search?query=hunterkey&searchType=publisherSearch"
     ];
 
     // show return data
