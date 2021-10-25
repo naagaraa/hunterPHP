@@ -89,6 +89,15 @@ class Hunter
 
                 break;
 
+            case 'ieeexplorer':
+                $extract = [
+                    "hunterkey" => str_replace(" ", "%20", trim($key)),
+                    "htmldom" => "a ._ngcontent-umw-c113 .xplanchortagroutinghandler .xplhighlight .xplmathjax",
+                ];
+                return $extract;
+
+                break;
+
             default:
                 # code...
                 break;
@@ -116,13 +125,14 @@ class Hunter
             die;
         }
 
-        // config
+        // config goutte
         $filter_data = self::FilterData($webpages, $key);
         $url_client = (object) $list->getData();
         $web_client = $url_client->{$webpages};
         $http_client = str_replace("hunterkey", $filter_data["hunterkey"], $web_client);
 
 
+        // config httpclient
         $client = new Client(HttpClient::create([
             'timeout' => 120,
             'verify_peer' => false,
@@ -130,10 +140,11 @@ class Hunter
         ]));
         $crawler = $client->request('GET', $http_client);
 
+        // save data to array
         $extract_data = [];
         $crawler->filter($filter_data["htmldom"])->each(function ($node) use (&$extract_data) {
-            // echo $node->text() . "<br>";
-            array_push($extract_data, $node->text());
+            echo $node->text() . "<br>";
+            // array_push($extract_data, $node->text());
         });
 
         return $extract_data;
