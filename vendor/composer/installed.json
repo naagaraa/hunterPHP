@@ -2,8 +2,8 @@
     "packages": [
         {
             "name": "fabpot/goutte",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
+            "version": "v4.0.1",
+            "version_normalized": "4.0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/Goutte.git",
@@ -27,7 +27,6 @@
                 "symfony/phpunit-bridge": "^5.0"
             },
             "time": "2020-10-14T06:49:09+00:00",
-            "default-branch": true,
             "type": "application",
             "installation-source": "dist",
             "autoload": {

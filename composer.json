@@ -13,7 +13,7 @@
         "symfony/var-dumper": "5.4.x-dev"
     },
     "require": {
-        "fabpot/goutte": "dev-master"
+        "fabpot/goutte": "v4.0.1"
     },
     "config": {
         "optimize-autoloader": true,

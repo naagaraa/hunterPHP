@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebfe6cb4af73cfd0f333207dbf863b49",
+    "content-hash": "531dbe25fb9a3def6e215a2ecdc5d57d",
     "packages": [
         {
             "name": "fabpot/goutte",
-            "version": "dev-master",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/Goutte.git",
@@ -31,7 +31,6 @@
             "require-dev": {
                 "symfony/phpunit-bridge": "^5.0"
             },
-            "default-branch": true,
             "type": "application",
             "autoload": {
                 "psr-4": {
@@ -1430,7 +1429,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fabpot/goutte": 20,
         "symfony/var-dumper": 20
     },
     "prefer-stable": false,

@@ -5,19 +5,17 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fa6cc0bafd62e38b538b40353e71096feff13ba4',
+        'reference' => '8de17d3083e00f3e988a4716f13d2534a834b41c',
         'name' => 'nagara/hunter-php',
         'dev' => true,
     ),
     'versions' => array(
         'fabpot/goutte' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'v4.0.1',
+            'version' => '4.0.1.0',
             'type' => 'application',
             'install_path' => __DIR__ . '/../fabpot/goutte',
-            'aliases' => array(
-                0 => '9999999-dev',
-            ),
+            'aliases' => array(),
             'reference' => '293e754f0be2f1e85f9b31262cb811de39874e03',
             'dev_requirement' => false,
         ),
@@ -27,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fa6cc0bafd62e38b538b40353e71096feff13ba4',
+            'reference' => '8de17d3083e00f3e988a4716f13d2534a834b41c',
             'dev_requirement' => false,
         ),
         'php-http/async-client-implementation' => array(
