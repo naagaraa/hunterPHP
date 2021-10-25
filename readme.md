@@ -10,8 +10,18 @@ not support headless browser or modern webpage like SPA (single page application
 
 # Install
 
+**composer**
+
 ```bash
-composer require nagara/Hunterphp
+composer require nagara/hunter-php
+```
+
+or
+
+**clone github**
+
+```bash
+https://github.com/naagaraa/hunterPHP.git
 ```
 
 <br>
