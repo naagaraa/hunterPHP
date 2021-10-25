@@ -2,10 +2,19 @@
     "name": "nagara/hunter-php",
     "description": "this libraries tools for web data extration tools title  at google schollar, neliti, springen open, and research gate",
     "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "naagaraa",
+            "email": "ekabersinar@gmail.com"
+        }
+    ],
     "require-dev": {
         "symfony/var-dumper": "5.4.x-dev"
     },
-    "license": "MIT",
+    "require": {
+        "fabpot/goutte": "dev-master"
+    },
     "config": {
         "optimize-autoloader": true,
         "apcu-autoloader": true,
@@ -19,15 +28,5 @@
         "classmap": [
             "src"
         ]
-    },
-    "authors": [
-        {
-            "name": "naagaraa",
-            "email": "ekabersinar@gmail.com"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {
-        "fabpot/goutte": "dev-master"
     }
 }

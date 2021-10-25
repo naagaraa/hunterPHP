@@ -52,8 +52,6 @@ trait ServiceSubscriberTrait
 
     /**
      * @required
-     *
-     * @return ContainerInterface|null
      */
     public function setContainer(ContainerInterface $container)
     {

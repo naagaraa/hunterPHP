@@ -345,7 +345,10 @@ final class CurlHttpClient implements HttpClientInterface, LoggerAwareInterface,
         $this->multi->reset();
     }
 
-    public function __sleep(): array
+    /**
+     * @return array
+     */
+    public function __sleep()
     {
         throw new \BadMethodCallException('Cannot serialize '.__CLASS__);
     }

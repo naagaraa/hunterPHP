@@ -105,6 +105,8 @@ abstract class AbstractBrowser
     /**
      * Sets the insulated flag.
      *
+     * @param bool $insulated Whether to insulate the requests or not
+     *
      * @throws \RuntimeException When Symfony Process Component is not installed
      */
     public function insulate(bool $insulated = true)
@@ -118,6 +120,8 @@ abstract class AbstractBrowser
 
     /**
      * Sets server parameters.
+     *
+     * @param array $server An array of server parameters
      */
     public function setServerParameters(array $server)
     {
@@ -139,7 +143,7 @@ abstract class AbstractBrowser
      *
      * @param mixed $default A default value when key is undefined
      *
-     * @return mixed
+     * @return mixed A value of the parameter
      */
     public function getServerParameter(string $key, $default = '')
     {
@@ -178,7 +182,7 @@ abstract class AbstractBrowser
     /**
      * Returns the History instance.
      *
-     * @return History
+     * @return History A History instance
      */
     public function getHistory()
     {
@@ -188,7 +192,7 @@ abstract class AbstractBrowser
     /**
      * Returns the CookieJar instance.
      *
-     * @return CookieJar
+     * @return CookieJar A CookieJar instance
      */
     public function getCookieJar()
     {
@@ -198,7 +202,7 @@ abstract class AbstractBrowser
     /**
      * Returns the current Crawler instance.
      *
-     * @return Crawler
+     * @return Crawler A Crawler instance
      */
     public function getCrawler()
     {
@@ -212,7 +216,7 @@ abstract class AbstractBrowser
     /**
      * Returns the current BrowserKit Response instance.
      *
-     * @return Response
+     * @return Response A BrowserKit Response instance
      */
     public function getInternalResponse()
     {
@@ -229,7 +233,7 @@ abstract class AbstractBrowser
      * The origin response is the response instance that is returned
      * by the code that handles requests.
      *
-     * @return object
+     * @return object A response instance
      *
      * @see doRequest()
      */
@@ -245,7 +249,7 @@ abstract class AbstractBrowser
     /**
      * Returns the current BrowserKit Request instance.
      *
-     * @return Request
+     * @return Request A BrowserKit Request instance
      */
     public function getInternalRequest()
     {
@@ -262,7 +266,7 @@ abstract class AbstractBrowser
      * The origin request is the request instance that is sent
      * to the code that handles requests.
      *
-     * @return object
+     * @return object A Request instance
      *
      * @see doRequest()
      */
@@ -431,7 +435,9 @@ abstract class AbstractBrowser
     /**
      * Makes a request in another process.
      *
-     * @return object
+     * @param object $request An origin request instance
+     *
+     * @return object An origin response instance
      *
      * @throws \RuntimeException When processing returns exit code
      */
@@ -466,7 +472,9 @@ abstract class AbstractBrowser
     /**
      * Makes a request.
      *
-     * @return object
+     * @param object $request An origin request instance
+     *
+     * @return object An origin response instance
      */
     abstract protected function doRequest(object $request);
 
@@ -485,7 +493,7 @@ abstract class AbstractBrowser
     /**
      * Filters the BrowserKit request to the origin one.
      *
-     * @return object
+     * @return object An origin request instance
      */
     protected function filterRequest(Request $request)
     {
@@ -495,7 +503,9 @@ abstract class AbstractBrowser
     /**
      * Filters the origin response to the BrowserKit one.
      *
-     * @return Response
+     * @param object $response The origin response to filter
+     *
+     * @return Response An BrowserKit Response instance
      */
     protected function filterResponse(object $response)
     {
@@ -639,7 +649,9 @@ abstract class AbstractBrowser
     /**
      * Takes a URI and converts it to absolute if it is not already absolute.
      *
-     * @return string
+     * @param string $uri A URI
+     *
+     * @return string An absolute URI
      */
     protected function getAbsoluteUri(string $uri)
     {

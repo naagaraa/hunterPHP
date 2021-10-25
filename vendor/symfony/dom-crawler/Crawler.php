@@ -41,9 +41,7 @@ class Crawler implements \Countable, \IteratorAggregate
     private $namespaces = [];
 
     /**
-     * A map of cached namespaces.
-     *
-     * @var \ArrayObject
+     * @var \ArrayObject A map of cached namespaces
      */
     private $cachedNamespaces;
 
@@ -572,7 +570,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns the attribute value of the first node of the list.
      *
-     * @return string|null
+     * @return string|null The attribute value or null if the attribute does not exist
      *
      * @throws \InvalidArgumentException When current node is empty
      */
@@ -590,7 +588,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns the node name of the first node of the list.
      *
-     * @return string
+     * @return string The node name
      *
      * @throws \InvalidArgumentException When current node is empty
      */
@@ -611,7 +609,7 @@ class Crawler implements \Countable, \IteratorAggregate
      * @param string|null $default             When not null: the value to return when the current node is empty
      * @param bool        $normalizeWhitespace Whether whitespaces should be trimmed and normalized to single spaces
      *
-     * @return string
+     * @return string The node value
      *
      * @throws \InvalidArgumentException When current node is empty
      */
@@ -635,19 +633,11 @@ class Crawler implements \Countable, \IteratorAggregate
     }
 
     /**
-     * Returns only the inner text that is the direct descendent of the current node, excluding any child nodes.
-     */
-    public function innerText(): string
-    {
-        return $this->filterXPath('.//text()')->text();
-    }
-
-    /**
      * Returns the first node of the list as HTML.
      *
      * @param string|null $default When not null: the value to return when the current node is empty
      *
-     * @return string
+     * @return string The node html
      *
      * @throws \InvalidArgumentException When current node is empty
      */
@@ -698,7 +688,7 @@ class Crawler implements \Countable, \IteratorAggregate
      * Since an XPath expression might evaluate to either a simple type or a \DOMNodeList,
      * this method will return either an array of simple types or a new Crawler instance.
      *
-     * @return array|Crawler
+     * @return array|Crawler An array of evaluation results or a new Crawler instance
      */
     public function evaluate(string $xpath)
     {
@@ -729,7 +719,7 @@ class Crawler implements \Countable, \IteratorAggregate
      *
      *     $crawler->filter('h1 a')->extract(['_text', 'href']);
      *
-     * @return array
+     * @return array An array of extracted values
      */
     public function extract(array $attributes)
     {
@@ -808,7 +798,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Selects images by alt value.
      *
-     * @return static
+     * @return static A new instance of Crawler with the filtered list of nodes
      */
     public function selectImage(string $value)
     {
@@ -832,7 +822,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns a Link object for the first node in the list.
      *
-     * @return Link
+     * @return Link A Link instance
      *
      * @throws \InvalidArgumentException If the current node list is empty or the selected node is not instance of DOMElement
      */
@@ -854,7 +844,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns an array of Link objects for the nodes in the list.
      *
-     * @return Link[]
+     * @return Link[] An array of Link instances
      *
      * @throws \InvalidArgumentException If the current node list contains non-DOMElement instances
      */
@@ -875,7 +865,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns an Image object for the first node in the list.
      *
-     * @return Image
+     * @return Image An Image instance
      *
      * @throws \InvalidArgumentException If the current node list is empty
      */
@@ -897,7 +887,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns an array of Image objects for the nodes in the list.
      *
-     * @return Image[]
+     * @return Image[] An array of Image instances
      */
     public function images()
     {
@@ -916,7 +906,7 @@ class Crawler implements \Countable, \IteratorAggregate
     /**
      * Returns a Form object for the first node in the list.
      *
-     * @return Form
+     * @return Form A Form instance
      *
      * @throws \InvalidArgumentException If the current node list is empty or the selected node is not instance of DOMElement
      */
@@ -970,7 +960,7 @@ class Crawler implements \Countable, \IteratorAggregate
      *     echo Crawler::xpathLiteral('a\'b"c');
      *     //prints concat('a', "'", 'b"c')
      *
-     * @return string
+     * @return string Converted string
      */
     public static function xpathLiteral(string $s)
     {
