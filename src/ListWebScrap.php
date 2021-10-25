@@ -42,6 +42,8 @@ class ListWebScrap
         "ieeexplorer" => "https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=hunterkey"
     ];
 
+    #note ieeeexplorer still having problem with headless browser -> angular
+
     // show return data
     public function getData()
     {

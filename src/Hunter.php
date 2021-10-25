@@ -143,8 +143,8 @@ class Hunter
         // save data to array
         $extract_data = [];
         $crawler->filter($filter_data["htmldom"])->each(function ($node) use (&$extract_data) {
-            echo $node->text() . "<br>";
-            // array_push($extract_data, $node->text());
+            // echo $node->text() . "<br>";
+            array_push($extract_data, $node->text());
         });
 
         return $extract_data;

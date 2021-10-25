@@ -1,6 +1,6 @@
 {
     "name": "nagara/hunter-php",
-    "description": "this libraries tools for web data extration tools",
+    "description": "this libraries tools for web data extration tools title  at google schollar, neliti, springen open, and research gate",
     "type": "library",
     "require-dev": {
         "symfony/var-dumper": "5.4.x-dev"

@@ -8,6 +8,20 @@ simple title scraping using php and goutte for older website, at
 
 not support headless browser or modern webpage like SPA (single page application)
 
+# Install
+
+```bash
+composer require nagara/Hunterphp
+```
+
+<br>
+
+# code mainteners :goat:
+
+#### [miyukinagara](https://github.com/naagaraa)
+
+<br>
+
 # Knowledge
 
 ## learn goutte
@@ -26,12 +40,14 @@ require "vendor/autoload.php";
 ```
 
 **how to use**
+how it's work ? this program same with your search in the original page, but with this code i can search title at the same time and get the data save to array.
+
+:warning: **only show search on first page**
 
 ```php
 use HunterPHP\Hunter;
 
 $hunter = new Hunter;
-$hunter->keyword("hello");
 
 echo "<h1>Web Data Extraction for Title Journal or Article at Online Journal</h1>";
 echo "<h2>study case Web Data extraction for non Headless Browser</h2>";
@@ -52,6 +68,94 @@ dump($hunter->scrap("neliti", "AI"));
 echo "<h3>research gate open journal : data extraction -> keyword AI</h3>";
 dump($hunter->scrap("research_gate", "AI"));
 
+```
+
+**another example**
+
+```php
+<?php
+
+require "vendor/autoload.php";
+
+use HunterPHP\Hunter;
+
+$hunter = new Hunter;
+
+$keyword = "apriori";
+
+$springeropen = $hunter->scrap("springeropen", $keyword);
+$google_scholar = $hunter->scrap("google_scholar", $keyword);
+$neliti = $hunter->scrap("neliti", $keyword);
+$research_gate = $hunter->scrap("research_gate", $keyword);
+
+$html = <<<HTML
+<h1>example with table<h1>
+HTML;
+echo $html;
+
+?>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        /* margin: auto; */
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<table>
+    <tr>
+        <th>springer open</th>
+    </tr>
+    <?php foreach ($springeropen as $title) : ?>
+        <tr>
+            <td><?= $title ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+<br><br>
+<table>
+    <tr>
+        <th>google scholar</th>
+    </tr>
+    <?php foreach ($google_scholar as $title) : ?>
+        <tr>
+            <td><?= $title ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+<br><br>
+<table>
+    <tr>
+        <th>research gate</th>
+    </tr>
+    <?php foreach ($research_gate as $title) : ?>
+        <tr>
+            <td><?= $title ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+<br><br>
+<table>
+    <tr>
+        <th>neliti</th>
+    </tr>
+    <?php foreach ($neliti as $title) : ?>
+        <tr>
+            <td><?= $title ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
 ```
 
 ## another reading
