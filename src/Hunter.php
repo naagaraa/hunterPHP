@@ -51,7 +51,7 @@ class Hunter
      * @param string $key
      * @return void
      */
-    public function FilterData($webpages = "", $key = "")
+    public static function FilterData($webpages = "", $key = "")
     {
         switch ($webpages) {
             case 'google_scholar':

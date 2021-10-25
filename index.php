@@ -23,5 +23,5 @@ $hunter->keyword("hello");
 // dump($hunter->scrap("neliti", "AI"));
 
 // example get data from research gate open journal
-echo "<h3>research gate open journal : data extraction -> keyword AI</h3>";
-dump($hunter->scrap("ieeexplorer", "web crawler"));
+// echo "<h3>research gate open journal : data extraction -> keyword AI</h3>";
+// dump($hunter->scrap("ieeexplorer", "web crawler"));
